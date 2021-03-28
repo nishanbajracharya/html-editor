@@ -1,0 +1,30 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "MODE=development webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "monaco-editor": "^0.23.0"
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.6",
+    "css-loader": "^5.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "monaco-editor-webpack-plugin": "^3.0.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.18",
+    "typescript": "^4.2.3",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
