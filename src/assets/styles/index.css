@@ -56,7 +56,7 @@ body {
 }
 
 .html, .css {
-  flex: 1;
+  flex-basis: 50%;
   border: 1px solid var(--border-color);
 }
 
@@ -70,9 +70,9 @@ body {
   flex-basis: 50%;
 }
 
-.divider {
+.divider-x, .divider-y {
   user-select: none;
-  position:absolute;
+  position: absolute;
   top: 0;
   cursor: ew-resize;
   left: calc(50% - 4px);
@@ -83,12 +83,21 @@ body {
   transition: opacity 150ms;
 }
 
-.divider:hover {
+.divider-x:hover, .divider-y:hover {
   opacity: 1;
+}
+
+.divider-y {
+  width: 100%;
+  left: 0;
+  top: calc(50% - 4px);
+  height: 8px;
+  cursor: ns-resize;
 }
 
 .editors {
   display: flex;
+  position: relative;
   background: #1e1e1e;
   flex-direction: column;
 }

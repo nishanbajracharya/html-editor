@@ -10,6 +10,7 @@ const DEBOUNCE_TIMEOUT = 300;
 const editorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
   theme: 'vs-dark',
   automaticLayout: true,
+  renderWhitespace: 'all',
 };
 
 let htmlEditor: monaco.editor.IStandaloneCodeEditor;
@@ -57,7 +58,7 @@ if (htmlDOM && cssDOM) {
   cssChangeListener();
   cssEditor.onDidChangeModelContent(cssChangeListener);
 
-  initializeDrag(htmlEditor, cssEditor);
+  initializeDrag(htmlEditor, cssEditor, htmlDOM, cssDOM);
 }
 
 const outputHTML = document.getElementById('output-html');
