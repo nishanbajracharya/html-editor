@@ -24,7 +24,7 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     filename: 'js/bundle.[name].[chunkhash].js',
-    chunkFilename: 'js/chunk.[name].chunkhash.js',
+    chunkFilename: 'js/chunk.[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -74,18 +74,8 @@ module.exports = {
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/
             )[1];
 
-            return `npm.${packageName.replace('@', '')}`;
+            return `vendor.${packageName.replace('@', '')}`;
           },
-        },
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-          reuseExistingChunk: true,
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
         },
       },
     },
